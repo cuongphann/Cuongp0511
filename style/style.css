@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #24beda;
+    --text-color: #333;
+}
+
+html {
+    font-family: 'Oswald', sans-serif;
+    font-size: 62.5%;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+}
+body {
+    width: 100%;
+    height: 90vh;
+}
+
+.app {
+    margin: 60px auto 0;
+    width: 310px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+}
+.header {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+}
+.header-now {
+    padding-top: 15px;
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+.header-title {
+    display: -webkit-box;
+    overflow: hidden;
+    padding: 0 25px;
+    font-size: 2rem;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    
+}
+.header-body {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-img {
+    background-image: url("../assets/img/haconvuongnang.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    padding-top: 80%;
+    border-radius: 50%;
+}
+
+
+.control-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    min-height: 50px;
+    align-items: center;
+    padding: 0 35px 5px;
+}
+.control-item {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.control-item.active {
+    color: var(--color-primary);
+}
+.control-item-be {
+    font-size: 2.2rem;
+    background-color: var(--color-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.control-time {
+    width: 100%;
+    position: relative;
+    padding: 0 35px;
+    top: -15px;
+    left: 0;
+    overflow: hidden;
+}
+#slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    outline: none;
+    border-radius: 3px;
+    position: relative;
+    background-color: transparent;
+    z-index: 5;
+}
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--color-primary);
+    z-index: 3;
+}
+
+
+#selector {
+    top: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+#proressbar {
+    position: relative;
+    top: -9px;
+    left: 0;
+    z-index: 0;
+    width: 0%;
+    height: 5px;
+    z-index: 2;
+    background-color: var(--color-primary);
+}
+/* .progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    z-index: 2;
+} */
+
+
+.playlist {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgb(243, 240, 240);
+    padding: 0 10px 15px;
+    scroll-behavior: smooth;
+}
+.playlist::-webkit-scrollbar {
+    display: none;
+}
+
+.songs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: .3s ease-out;
+    
+}
+.songs:hover {
+    cursor: pointer;
+    background-color: var(--color-primary);
+}
+.songs:active {
+    opacity: .8;
+}
+.songs:hover .song-name,
+.songs:hover .song-singer,
+.songs:hover .song-icon {
+    color: #fff;
+}
+
+.song-desc {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.song-img {
+    display: inline-block;
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+.song-name {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    transition: .2s ease-out;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    padding-right: 10px;
+
+}
+.song-singer {
+    color: #5c5c5c;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: .2s ease-out;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.song-icon {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    transition: .2s ease-out;
+
+}
+.songs.invalid {
+    background-color: var(--color-primary);
+}
+.songs.invalid  .song-name,
+.songs.invalid  .song-singer,
+.songs.invalid  .song-icon {
+    color: #fff;
+}
+.sub {
+    width: 240px;
+    height: 5px;
+    background-color: #8eadb2;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+#timestart,#timeend {
+    color: #555;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+}
+
+@media (max-width: 739px) {
+    .app {
+        margin: 10px auto 0;
+    }
+    .sub {
+        width: 240px;
+        height: 5px;
+        background-color: #8eadb2;
+        position: absolute;
+        top: 44%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    .control-item {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Relax</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" type="image/png" href="./assets/img/logo1.png"/>
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.3/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="header-header">
+                <p class="header-now">Now playing...</p>
+                <h3 class="header-title"></h3>
+            </div>
+            <div class="header-body">
+                <div class="header-img"></div>
+            </div>
+            <div class="header-control">
+                <ul class="control-list">
+                    <li id="repeat" class="control-item"><i class="fas fa-redo"></i></li>
+                    <li id="prev" class="control-item"><i class="fas fa-step-backward"></i></li>
+                    <li id="play" class="control-item control-item-be"><i class="iconplay fas fa-play"></i></li>
+                    <li id="next" class="control-item"><i class="fas fa-step-forward"></i></li>
+                    <li id="random" class="control-item"><i class="fas fa-random"></i></li>
+                </ul>
+                <div class="time">
+                    <span id="timestart"></span>
+                    <span id="timeend">00:00</span>
+                </div>
+                    <div class="control-time">
+                        <input type="range" name="slider" min="0" max="100" value="0" id="slider">
+                        <div id="proressbar"></div>
+                        <div class="sub"></div>
+                    </div>
+            </div>
+            <audio id="audio" src=""></audio>
+        </div>
+        <div class="playlist">
+            
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+</html>
